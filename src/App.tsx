@@ -13,7 +13,8 @@ import {
   ExternalLink,
   Instagram,
   Facebook,
-  Award
+  Award,
+  Play
 } from "lucide-react";
 import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
@@ -33,7 +34,8 @@ const products = [
       "Top / Centre / Bottom attached.",
       "Paint: One coat red oxide, Two coat colour Asian paint."
     ],
-    image: "https://picsum.photos/seed/fabrication/600/400"
+    video: "/fabrication.mp4",
+    image: "https://images.pexels.com/photos/238146/pexels-photo-238146.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     id: "netting",
@@ -45,7 +47,7 @@ const products = [
       "Top Net 1.5 mm Thick. mesh size 50mm×50mm.",
       "With border rope and fitting."
     ],
-    image: "https://picsum.photos/seed/netting/600/400"
+    image: "https://images.pexels.com/photos/163452/basketball-basketball-court-sport-game-163452.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     id: "turf",
@@ -58,7 +60,7 @@ const products = [
       "Silica sand, Granules.",
       "With Adhesive Tape fitting."
     ],
-    image: "https://picsum.photos/seed/turf-grass/600/400"
+    image: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     id: "electricity",
@@ -70,7 +72,7 @@ const products = [
       "Switch and socket included.",
       "2.5mm Armoured cable Everest."
     ],
-    image: "https://picsum.photos/seed/lighting/600/400"
+    image: "https://images.pexels.com/photos/157827/pexels-photo-157827.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     id: "padding",
@@ -81,7 +83,7 @@ const products = [
       "Pole padding 12mm thick, Height 6ft.",
       "Bottom pipe padding 12mm T. Around."
     ],
-    image: "https://picsum.photos/seed/padding/600/400"
+    image: "https://images.pexels.com/photos/163444/sport-treadmill-gym-fitness-163444.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     id: "subbase",
@@ -93,7 +95,7 @@ const products = [
       "75mm Thick mix Stone spread with compact.",
       "PCC: 100mm Thick manual Concrete M-15 Grade."
     ],
-    image: "https://picsum.photos/seed/foundation/600/400"
+    image: "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ];
 
@@ -162,13 +164,13 @@ export default function App() {
                 </p>
                 <div className="flex items-start gap-4 text-sm text-foreground/80">
                   <MapPin className="text-primary shrink-0" size={20} />
-                  <span>Shivsena Maidan, Near By Laljipada, Kandivali West, Mumbai</span>
+                  <span>Shivsena Maidan, Near By Laljipada, Kandivali West, Mumbai-400067</span>
                 </div>
               </div>
               <div className="relative">
                 <div className="rounded-[2rem] overflow-hidden rotate-2 shadow-float border-4 border-white">
                   <img 
-                    src="https://picsum.photos/seed/turf-mumbai/800/500" 
+                    src="https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800" 
                     alt="Turf Construction" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -213,13 +215,29 @@ export default function App() {
                     </li>
                   ))}
                 </ul>
-                <div className="rounded-2xl overflow-hidden aspect-video mt-auto">
-                  <img 
-                    src={product.image} 
-                    alt={product.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="rounded-2xl overflow-hidden aspect-video mt-auto relative">
+                  {(product as any).video ? (
+                    <div className="relative w-full h-full">
+                      <video 
+                        src={(product as any).video}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline
+                      />
+                      <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm p-1.5 rounded-full text-white">
+                        <Play size={14} className="fill-current" />
+                      </div>
+                    </div>
+                  ) : (
+                    <img 
+                      src={product.image} 
+                      alt={product.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
                 </div>
               </Card>
             ))}
@@ -246,7 +264,7 @@ export default function App() {
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={20} className="text-secondary shrink-0" />
-                  <span className="text-background/70">Shivsena Maidan, Laljipada, Kandivali West, Mumbai</span>
+                  <span className="text-background/70">Shivsena Maidan, Laljipada, Kandivali West, Mumbai-400067</span>
                 </div>
               </div>
             </div>
