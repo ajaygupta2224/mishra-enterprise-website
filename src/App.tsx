@@ -47,7 +47,7 @@ const products = [
       "Top Net 1.5 mm Thick. mesh size 50mm×50mm.",
       "With border rope and fitting."
     ],
-    image: "https://images.pexels.com/photos/163452/basketball-basketball-court-sport-game-163452.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: "/garware-net.jpg"
   },
   {
     id: "turf",
@@ -60,7 +60,7 @@ const products = [
       "Silica sand, Granules.",
       "With Adhesive Tape fitting."
     ],
-    image: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: "/artificial turf.jpeg"
   },
   {
     id: "electricity",
@@ -72,7 +72,7 @@ const products = [
       "Switch and socket included.",
       "2.5mm Armoured cable Everest."
     ],
-    image: "https://images.pexels.com/photos/157827/pexels-photo-157827.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: "/lights.jpeg"
   },
   {
     id: "padding",
@@ -83,7 +83,7 @@ const products = [
       "Pole padding 12mm thick, Height 6ft.",
       "Bottom pipe padding 12mm T. Around."
     ],
-    image: "https://images.pexels.com/photos/163444/sport-treadmill-gym-fitness-163444.jpeg?auto=compress&cs=tinysrgb&w=600"
+    image: "/padding.jpeg"
   },
   {
     id: "subbase",
@@ -95,6 +95,7 @@ const products = [
       "75mm Thick mix Stone spread with compact.",
       "PCC: 100mm Thick manual Concrete M-15 Grade."
     ],
+    video: "/pcc.mp4",
     image: "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ];
@@ -110,7 +111,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen scroll-smooth">
+    <div className="relative min-h-screen scroll-smooth overflow-x-hidden">
       {/* Background Blobs */}
       <Blob className="w-[800px] h-[800px] -top-96 -left-48" color="bg-primary/10" />
       <Blob className="w-[600px] h-[600px] top-1/2 -right-48" color="bg-secondary/10" delay={2} />
@@ -215,9 +216,9 @@ export default function App() {
                     </li>
                   ))}
                 </ul>
-                <div className="rounded-2xl overflow-hidden aspect-video mt-auto relative">
+                <div className="rounded-2xl overflow-hidden h-[600px] mt-auto relative bg-black/5">
                   {(product as any).video ? (
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full bg-black">
                       <video 
                         src={(product as any).video}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -284,9 +285,6 @@ export default function App() {
                 <a href="https://jsdl.in/RSL-NVG1776318278" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-background/70 hover:text-secondary transition-colors">
                   <ExternalLink size={18} /> Justdial
                 </a>
-                <a href="https://www.indiamart.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-background/70 hover:text-secondary transition-colors">
-                  <ExternalLink size={18} /> IndiaMart
-                </a>
               </div>
             </div>
 
@@ -303,7 +301,6 @@ export default function App() {
 
           <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/50">
             <p>© {new Date().getFullYear()} Mishra Enterprises. All rights reserved.</p>
-            <p>Designed with Nature in Mind</p>
           </div>
         </div>
       </footer>
