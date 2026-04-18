@@ -1,11 +1,11 @@
 import * as React from "react";
 import { motion } from "motion/react";
-import { 
-  Construction, 
-  ShieldCheck, 
-  Zap, 
-  Layers, 
-  Grid3X3, 
+import {
+  Construction,
+  ShieldCheck,
+  Zap,
+  Layers,
+  Grid3X3,
   Hammer,
   Phone,
   MapPin,
@@ -22,12 +22,6 @@ import { Blob } from "@/src/components/ui/Blob";
 import { cn } from "@/src/lib/utils";
 import { Logo } from "@/src/components/ui/Logo";
 
-import fabricationVideo from "./assets/fabrication.mp4";
-import garwareNetImg from "./assets/garware-net.jpg";
-import artificialTurfImg from "./assets/artificial turf.jpeg";
-import lightsImg from "./assets/lights.jpeg";
-import paddingImg from "./assets/padding.jpeg";
-import pccVideo from "./assets/pcc.mp4";
 
 const products = [
   {
@@ -42,8 +36,7 @@ const products = [
       "Top / Centre / Bottom attached.",
       "Paint: One coat red oxide, Two coat colour Asian paint."
     ],
-    video: fabricationVideo,
-    image: "https://images.pexels.com/photos/238146/pexels-photo-238146.jpeg?auto=compress&cs=tinysrgb&w=600"
+    video: "/assets/fabrication.mp4",
   },
   {
     id: "netting",
@@ -55,7 +48,7 @@ const products = [
       "Top Net 1.5 mm Thick. mesh size 50mm×50mm.",
       "With border rope and fitting."
     ],
-    image: garwareNetImg
+    image: "/assets/nets.jpeg"
   },
   {
     id: "turf",
@@ -68,7 +61,7 @@ const products = [
       "Silica sand, Granules.",
       "With Adhesive Tape fitting."
     ],
-    image: artificialTurfImg
+    image: "/assets/turf.jpeg"
   },
   {
     id: "electricity",
@@ -80,7 +73,7 @@ const products = [
       "Switch and socket included.",
       "2.5mm Armoured cable Everest."
     ],
-    image: lightsImg
+    image: "/assets/lights.jpeg"
   },
   {
     id: "padding",
@@ -91,7 +84,7 @@ const products = [
       "Pole padding 12mm thick, Height 6ft.",
       "Bottom pipe padding 12mm T. Around."
     ],
-    image: paddingImg
+    image: "/assets/padding.jpeg"
   },
   {
     id: "subbase",
@@ -103,7 +96,7 @@ const products = [
       "75mm Thick mix Stone spread with compact.",
       "PCC: 100mm Thick manual Concrete M-15 Grade."
     ],
-    video: pccVideo,
+    video: "/assets/pcc.mp4",
     image: "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ];
@@ -133,7 +126,7 @@ export default function App() {
             <div className="flex justify-center mb-12">
               <Logo size={120} className="scale-110 md:scale-125" />
             </div>
-            
+
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-bold mb-6">
               <Award size={16} />
               <span>Leading Turf Contractors in Mumbai</span>
@@ -143,7 +136,7 @@ export default function App() {
               <span className="text-secondary italic">Rooted in Excellence</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
-              Established in 2025, we are Mumbai's premier destination for Artificial Turf Construction. 
+              Established in 2025, we are Mumbai's premier destination for Artificial Turf Construction.
               From MS Fabrication to Sub-Base preparation, we provide end-to-end solutions for sports courts and landscaping.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -166,7 +159,7 @@ export default function App() {
               <div>
                 <h2 className="text-3xl md:text-4xl mb-6">Quality Construction for Every Game</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Located in Kandivali West, Mishra Enterprises acts as a one-stop destination servicing customers local and from other parts of Mumbai. 
+                  Located in Kandivali West, Mishra Enterprises acts as a one-stop destination servicing customers local and from other parts of Mumbai.
                   Our belief that customer satisfaction is as important as our products and services has helped us garner a vast base of customers.
                 </p>
                 <div className="flex items-start gap-4 text-sm text-foreground/80">
@@ -176,9 +169,9 @@ export default function App() {
               </div>
               <div className="relative">
                 <div className="rounded-[2rem] overflow-hidden rotate-2 shadow-float border-4 border-white">
-                  <img 
-                    src="https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                    alt="Turf Construction" 
+                  <img
+                    src="https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Turf Construction"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
@@ -199,10 +192,10 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
-              <Card 
-                key={product.id} 
+              <Card
+                key={product.id}
                 id={product.id}
-                variant={(index % 6 + 1) as any} 
+                variant={(index % 6 + 1) as any}
                 className="group h-full flex flex-col"
               >
                 <div className="h-14 w-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
@@ -225,12 +218,12 @@ export default function App() {
                 <div className="rounded-2xl overflow-hidden h-[600px] mt-auto relative bg-black/5">
                   {(product as any).video ? (
                     <div className="relative w-full h-full bg-black">
-                      <video 
+                      <video
                         src={(product as any).video}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        autoPlay 
-                        muted 
-                        loop 
+                        autoPlay
+                        muted
+                        loop
                         playsInline
                       />
                       <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm p-1.5 rounded-full text-white">
@@ -238,9 +231,9 @@ export default function App() {
                       </div>
                     </div>
                   ) : (
-                    <img 
-                      src={product.image} 
-                      alt={product.title} 
+                    <img
+                      src={product.image}
+                      alt={product.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
@@ -255,13 +248,13 @@ export default function App() {
       {/* Footer / Contact Section */}
       <footer className="bg-foreground text-background py-24 px-6 relative overflow-hidden">
         <Blob className="w-96 h-96 -bottom-24 -left-24" color="bg-primary/20" />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="lg:col-span-2">
               <Logo variant="gold" size={60} className="mb-8" />
               <p className="text-background/70 max-w-md mb-8 leading-relaxed">
-                Mumbai's trusted partner for Artificial Turf, Badminton Courts, and EPDM Flooring. 
+                Mumbai's trusted partner for Artificial Turf, Badminton Courts, and EPDM Flooring.
                 Available from 10:00 - 22:00 for all your queries.
               </p>
               <div className="space-y-4">
