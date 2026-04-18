@@ -20,6 +20,14 @@ import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
 import { Blob } from "@/src/components/ui/Blob";
 import { cn } from "@/src/lib/utils";
+import { Logo } from "@/src/components/ui/Logo";
+
+import fabricationVideo from "./assets/fabrication.mp4";
+import garwareNetImg from "./assets/garware-net.jpg";
+import artificialTurfImg from "./assets/artificial turf.jpeg";
+import lightsImg from "./assets/lights.jpeg";
+import paddingImg from "./assets/padding.jpeg";
+import pccVideo from "./assets/pcc.mp4";
 
 const products = [
   {
@@ -34,7 +42,7 @@ const products = [
       "Top / Centre / Bottom attached.",
       "Paint: One coat red oxide, Two coat colour Asian paint."
     ],
-    video: "/fabrication.mp4",
+    video: fabricationVideo,
     image: "https://images.pexels.com/photos/238146/pexels-photo-238146.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
@@ -47,7 +55,7 @@ const products = [
       "Top Net 1.5 mm Thick. mesh size 50mm×50mm.",
       "With border rope and fitting."
     ],
-    image: "/garware-net.jpg"
+    image: garwareNetImg
   },
   {
     id: "turf",
@@ -60,7 +68,7 @@ const products = [
       "Silica sand, Granules.",
       "With Adhesive Tape fitting."
     ],
-    image: "/artificial turf.jpeg"
+    image: artificialTurfImg
   },
   {
     id: "electricity",
@@ -72,7 +80,7 @@ const products = [
       "Switch and socket included.",
       "2.5mm Armoured cable Everest."
     ],
-    image: "/lights.jpeg"
+    image: lightsImg
   },
   {
     id: "padding",
@@ -83,7 +91,7 @@ const products = [
       "Pole padding 12mm thick, Height 6ft.",
       "Bottom pipe padding 12mm T. Around."
     ],
-    image: "/padding.jpeg"
+    image: paddingImg
   },
   {
     id: "subbase",
@@ -95,12 +103,10 @@ const products = [
       "75mm Thick mix Stone spread with compact.",
       "PCC: 100mm Thick manual Concrete M-15 Grade."
     ],
-    video: "/pcc.mp4",
+    video: pccVideo,
     image: "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ];
-
-import { Logo } from "@/src/components/ui/Logo";
 
 export default function App() {
   const scrollToSection = (id: string) => {
